@@ -1,6 +1,7 @@
-import Accordian from './src/Accordian.js'
+import Counter from "./src/Counter"
 
-const App = () => <Accordian/>
+
+const App = () => <Counter/>
 
 export default App
 

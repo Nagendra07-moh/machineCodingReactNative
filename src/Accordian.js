@@ -139,7 +139,6 @@ export default function Accordian() {
         <Text>{item?.key}</Text>
         {index === currExpandInd ? <AntDesign name="up" size={12} color="black" /> : <AntDesign name="down" size={12} color="black" />}
         </View>
-
         
         {index === currExpandInd && renderInnerData(item?.value)}
       </Pressable>
