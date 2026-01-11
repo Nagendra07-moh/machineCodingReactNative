@@ -2,11 +2,7 @@ import react,{useState,useEffect,useRef} from "react";
 
 export  const useCounter = () =>{
 
-    const [count,setCount] = useState({
-        HH:0,
-        MM:0,
-        SS:0
-    });
+    const [count,setCount] = useState({ HH: 0, MM: 0, SS: 0 });
     const [isRunning,setIsRunnig] = useState(false);
     const intervalRef = useRef(null);
     
