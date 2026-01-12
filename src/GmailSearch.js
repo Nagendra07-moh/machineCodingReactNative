@@ -5,6 +5,7 @@ const GmailSearch = () => {
     const [data, setData] = useState([])
     const [filteredTxt, setFilteredTxt] = useState([])
     const [searchTxt, setSearchTxt] = useState("")
+    const [selectedPills,setSelectedPills] = useState([])
 
 
     useEffect(() => {
@@ -44,6 +45,7 @@ const GmailSearch = () => {
 
     const onSelect = (item,index) => {
         setFilteredTxt((prev) => prev?.map((item,i) => i === index ? {...item, isSelected : !item?.isSelected} : item))
+        setSelectedPills((prev) => [...prev , item])
     }
 
     const renderPopupData = useCallback(
@@ -59,17 +61,15 @@ const GmailSearch = () => {
 
     const onChangeSearchText = (text) => {
         setSearchTxt(text);
-
-        const filtered = data.filter((item) =>
-            item.title.toLowerCase().includes(text.toLowerCase())
-        );
-
         setFilteredTxt(() => data.filter((item) =>
             item.title.toLowerCase().includes(text.toLowerCase())
         ));
     };
     return (
         <View style={styles.container}>
+            <View>
+                
+            </View>
             <View>
                 <TextInput
                     value={searchTxt}
